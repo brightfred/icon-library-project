@@ -7,18 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #0a0a0f;
-  --surface: #12121a;
-  --surface2: #1a1a26;
-  --border: #2a2a3d;
-  --accent: #4fffb0;
-  --accent2: #7b61ff;
-  --text: #e8e8f0;
-  --muted: #6b6b8a;
-  --font-display: 'Syne', sans-serif;
-  --font-mono: 'DM Mono', monospace;
-}
+:root{--bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--border:#2a2a3d;--accent:#4fffb0;--accent2:#7b61ff;--text:#e8e8f0;--muted:#6b6b8a;--font-display:'Syne',sans-serif;--font-mono:'DM Mono',monospace}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font-mono);min-height:100vh;overflow-x:hidden}
@@ -30,7 +19,7 @@ header{position:sticky;top:0;z-index:10;padding:0 24px;border-bottom:1px solid v
 .header-links{display:flex;gap:20px;align-items:center}
 .header-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
 .header-links a:hover{color:var(--accent)}
-.gh-btn{display:flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border);color:var(--text)!important;padding:6px 14px;border-radius:6px;font-size:12px;font-family:var(--font-mono);transition:border-color .2s,background .2s}
+.gh-btn{display:flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border);color:var(--text)!important;padding:6px 14px;border-radius:6px;font-size:12px;font-family:var(--font-mono);transition:border-color .2s}
 .gh-btn:hover{border-color:var(--accent)!important}
 .hero{position:relative;z-index:1;padding:72px 24px 56px;max-width:900px;margin:0 auto}
 .hero-tag{display:inline-block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:4px 10px;border-radius:3px;margin-bottom:24px}
@@ -88,19 +77,15 @@ header{position:sticky;top:0;z-index:10;padding:0 24px;border-bottom:1px solid v
 .usage{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:64px 24px 80px;border-top:1px solid var(--border)}
 .usage h2{font-family:var(--font-display);font-size:32px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
 .usage-subtitle{color:var(--muted);font-size:14px;margin-bottom:40px}
-.usage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:40px}
+.usage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .usage-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px}
 .usage-card h3{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:12px;color:var(--accent)}
 .code-block{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:14px 16px;font-family:var(--font-mono);font-size:12px;color:#a8b1c0;line-height:1.7;overflow-x:auto;white-space:pre}
-.code-block .kw{color:var(--accent2)}
-.code-block .str{color:var(--accent)}
-.code-block .tag{color:#ff7b7b}
-.code-block .attr{color:#ffc87b}
-.code-block .cm{color:var(--muted);font-style:italic}
+.code-block .kw{color:var(--accent2)}.code-block .str{color:var(--accent)}.code-block .tag{color:#ff7b7b}.code-block .attr{color:#ffc87b}.code-block .cm{color:var(--muted);font-style:italic}
 footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:24px;text-align:center;font-size:12px;color:var(--muted)}
 footer a{color:var(--muted);text-decoration:none}
 footer a:hover{color:var(--accent)}
-@media(max-width:600px){.hero h1{letter-spacing:-1px}.hero-stats{gap:20px}.grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}.install-cmd{font-size:12px}.header-links a:not(.gh-btn){display:none}}
+@media(max-width:600px){.hero h1{letter-spacing:-1px}.hero-stats{gap:20px}.grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}.header-links a:not(.gh-btn){display:none}}
 </style>
 </head>
 <body>
@@ -108,7 +93,7 @@ footer a:hover{color:var(--accent)}
   <div class="logo"><div class="logo-dot"></div>OpenMark Icons</div>
   <div class="header-links">
     <a href="#how-to-use">Usage</a>
-    <a href="https://github.com/fredericklarochedev/icon-library-project" class="gh-btn" target="_blank">
+    <a href="https://github.com/brightfred/icon-library-project" class="gh-btn" target="_blank">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
       GitHub
     </a>
@@ -120,8 +105,8 @@ footer a:hover{color:var(--accent)}
   <h1>Icons for<br><span>science, engineering<br>&amp; the web.</span></h1>
   <p>A free, open source SVG icon library built for developers and AI systems. Stroke-only, 24px grid, currentColor. Works in React, Vue, plain HTML &mdash; anything.</p>
   <div class="hero-stats">
-    <div class="stat"><span class="stat-num" id="total-count">20</span><span class="stat-label">Icons</span></div>
-    <div class="stat"><span class="stat-num" id="cat-count">8</span><span class="stat-label">Categories</span></div>
+    <div class="stat"><span class="stat-num" id="total-count">23</span><span class="stat-label">Icons</span></div>
+    <div class="stat"><span class="stat-num" id="cat-count">11</span><span class="stat-label">Categories</span></div>
     <div class="stat"><span class="stat-num">MIT</span><span class="stat-label">License</span></div>
     <div class="stat"><span class="stat-num">24px</span><span class="stat-label">Grid</span></div>
   </div>
@@ -150,15 +135,16 @@ footer a:hover{color:var(--accent)}
   <div class="cats">
     <button class="cat-btn active" data-cat="all">All</button>
     <button class="cat-btn" data-cat="action">action</button>
-          <button class="cat-btn" data-cat="comm">comm</button>
-          <button class="cat-btn" data-cat="commerce">commerce</button>
-          <button class="cat-btn" data-cat="device">device</button>
-          <button class="cat-btn" data-cat="file">file</button>
-          <button class="cat-btn" data-cat="media">media</button>
-          <button class="cat-btn" data-cat="nav">nav</button>
-          <button class="cat-btn" data-cat="social">social</button>
-          <button class="cat-btn" data-cat="status">status</button>
-          <button class="cat-btn" data-cat="ui">ui</button>
+    <button class="cat-btn" data-cat="comm">comm</button>
+    <button class="cat-btn" data-cat="commerce">commerce</button>
+    <button class="cat-btn" data-cat="device">device</button>
+    <button class="cat-btn" data-cat="file">file</button>
+    <button class="cat-btn" data-cat="media">media</button>
+    <button class="cat-btn" data-cat="nav">nav</button>
+    <button class="cat-btn" data-cat="science">science</button>
+    <button class="cat-btn" data-cat="social">social</button>
+    <button class="cat-btn" data-cat="status">status</button>
+    <button class="cat-btn" data-cat="ui">ui</button>
   </div>
   <div id="icon-count"></div>
   <div class="grid" id="grid"></div>
@@ -170,8 +156,7 @@ footer a:hover{color:var(--accent)}
   <div class="usage-grid">
     <div class="usage-card">
       <h3>Plain HTML</h3>
-      <div class="code-block"><span class="cm">&lt;!-- paste SVG inline --&gt;</span>
-<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"icon"</span><span class="tag">&gt;</span>
+      <div class="code-block"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"icon"</span><span class="tag">&gt;</span>
   <span class="tag">&lt;svg</span> <span class="attr">viewBox</span>=<span class="str">"0 0 24 24"</span>
        <span class="attr">stroke</span>=<span class="str">"currentColor"</span><span class="tag">&gt;</span>
     ...
@@ -190,8 +175,7 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="usage-card">
       <h3>CSS sizing</h3>
-      <div class="code-block"><span class="cm">/* color via CSS */</span>
-<span class="attr">.icon</span> {
+      <div class="code-block"><span class="attr">.icon</span> {
   <span class="kw">width</span>: <span class="str">24px</span>;
   <span class="kw">height</span>: <span class="str">24px</span>;
   <span class="kw">color</span>: <span class="str">#4fffb0</span>;
@@ -203,16 +187,15 @@ footer a:hover{color:var(--accent)}
       <div class="code-block"><span class="cm"># machine-readable catalog</span>
 GET /icons.json
 
-<span class="cm"># fields per icon:</span>
-<span class="cm"># name, category, label,</span>
-<span class="cm"># tags, svg</span>
+<span class="cm"># fields: name, category,</span>
+<span class="cm"># label, tags, svg</span>
 <span class="cm"># MIT licensed</span></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>OpenMark Icons &mdash; MIT License &mdash; <a href="https://github.com/fredericklarochedev/icon-library-project" target="_blank">GitHub</a> &mdash; Built with Claude Code</p>
+  <p>OpenMark Icons &mdash; MIT License &mdash; <a href="https://github.com/brightfred/icon-library-project" target="_blank">GitHub</a> &mdash; Built with Claude Code</p>
 </footer>
 
 <div id="detail">
@@ -230,15 +213,12 @@ GET /icons.json
 </div>
 
 <script>
-const ICONS = [{"name": "action-add", "category": "action", "label": "add", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"12\" y1=\"3\" x2=\"12\" y2=\"21\"/>\n  <line x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/>\n</svg>"}, {"name": "action-delete", "category": "action", "label": "delete", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <polyline points=\"3 6 21 6\"/>\n  <path d=\"M8 6V4h8v2\"/>\n  <rect x=\"5\" y=\"6\" width=\"14\" height=\"14\" rx=\"2\"/>\n  <line x1=\"10\" y1=\"11\" x2=\"10\" y2=\"17\"/>\n  <line x1=\"14\" y1=\"11\" x2=\"14\" y2=\"17\"/>\n</svg>"}, {"name": "action-edit", "category": "action", "label": "edit", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M4 20h4l10.5-10.5a2.83 2.83 0 0 0-4-4L4 16v4z\"/>\n  <line x1=\"13.5\" y1=\"6.5\" x2=\"17.5\" y2=\"10.5\"/>\n</svg>"}, {"name": "action-search", "category": "action", "label": "search", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/>\n  <line x1=\"15.5\" y1=\"15.5\" x2=\"21\" y2=\"21\"/>\n</svg>"}, {"name": "comm-chat", "category": "comm", "label": "chat", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/>\n</svg>"}, {"name": "comm-mail", "category": "comm", "label": "mail", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/>\n  <polyline points=\"2 4 12 13 22 4\"/>\n</svg>"}, {"name": "commerce-cart", "category": "commerce", "label": "cart", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <circle cx=\"9\" cy=\"21\" r=\"1.5\"/>\n  <circle cx=\"20\" cy=\"21\" r=\"1.5\"/>\n  <path d=\"M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6\"/>\n</svg>"}, {"name": "device-mobile", "category": "device", "label": "mobile", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <rect x=\"5\" y=\"2\" width=\"14\" height=\"20\" rx=\"2\"/>\n  <circle cx=\"12\" cy=\"18\" r=\"1\"/>\n</svg>"}, {"name": "file-download", "category": "file", "label": "download", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/>\n  <polyline points=\"7 10 12 15 17 10\"/>\n  <line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/>\n</svg>"}, {"name": "media-camera", "category": "media", "label": "camera", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z\"/>\n  <circle cx=\"12\" cy=\"13\" r=\"4\"/>\n</svg>"}, {"name": "nav-arrow-left", "category": "nav", "label": "arrow left", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"20\" y1=\"12\" x2=\"4\" y2=\"12\"/>\n  <polyline points=\"10 18 4 12 10 6\"/>\n</svg>"}, {"name": "nav-arrow-right", "category": "nav", "label": "arrow right", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"4\" y1=\"12\" x2=\"20\" y2=\"12\"/>\n  <polyline points=\"14 6 20 12 14 18\"/>\n</svg>"}, {"name": "nav-close", "category": "nav", "label": "close", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"5\" y1=\"5\" x2=\"19\" y2=\"19\"/>\n  <line x1=\"19\" y1=\"5\" x2=\"5\" y2=\"19\"/>\n</svg>"}, {"name": "nav-menu", "category": "nav", "label": "menu", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"3\" y1=\"7\" x2=\"21\" y2=\"7\"/>\n  <line x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/>\n  <line x1=\"3\" y1=\"17\" x2=\"21\" y2=\"17\"/>\n</svg>"}, {"name": "social-heart", "category": "social", "label": "heart", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/>\n</svg>"}, {"name": "social-star", "category": "social", "label": "star", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"/>\n</svg>"}, {"name": "social-user", "category": "social", "label": "user", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <circle cx=\"12\" cy=\"8\" r=\"4\"/>\n  <path d=\"M4 20c0-4 3.58-7 8-7s8 3 8 7\"/>\n</svg>"}, {"name": "status-check", "category": "status", "label": "check", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <polyline points=\"4 13 9 18 20 7\"/>\n</svg>"}, {"name": "status-warning", "category": "status", "label": "warning", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M10.29 3.86L2.82 17a2 2 0 0 0 1.71 3h15a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z\"/>\n  <line x1=\"12\" y1=\"9\" x2=\"12\" y2=\"13\"/>\n  <circle cx=\"12\" cy=\"17\" r=\"0.5\"/>\n</svg>"}, {"name": "ui-bell", "category": "ui", "label": "bell", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9\"/>\n  <path d=\"M13.73 21a2 2 0 0 1-3.46 0\"/>\n</svg>"}];
+const ICONS = [{"name": "action-add", "category": "action", "label": "add", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"12\" y1=\"3\" x2=\"12\" y2=\"21\"/>\n  <line x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/>\n</svg>"}, {"name": "action-delete", "category": "action", "label": "delete", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <polyline points=\"3 6 21 6\"/>\n  <path d=\"M8 6V4h8v2\"/>\n  <rect x=\"5\" y=\"6\" width=\"14\" height=\"14\" rx=\"2\"/>\n  <line x1=\"10\" y1=\"11\" x2=\"10\" y2=\"17\"/>\n  <line x1=\"14\" y1=\"11\" x2=\"14\" y2=\"17\"/>\n</svg>"}, {"name": "action-edit", "category": "action", "label": "edit", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M4 20h4l10.5-10.5a2.83 2.83 0 0 0-4-4L4 16v4z\"/>\n  <line x1=\"13.5\" y1=\"6.5\" x2=\"17.5\" y2=\"10.5\"/>\n</svg>"}, {"name": "action-search", "category": "action", "label": "search", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/>\n  <line x1=\"15.5\" y1=\"15.5\" x2=\"21\" y2=\"21\"/>\n</svg>"}, {"name": "action-upload", "category": "action", "label": "upload", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <rect x=\"4\" y=\"14\" width=\"16\" height=\"6\" rx=\"2\"/>\n  <polyline points=\"7,10 12,5 17,10\"/>\n  <line x1=\"12\" y1=\"5\" x2=\"12\" y2=\"14\"/>\n</svg>"}, {"name": "comm-chat", "category": "comm", "label": "chat", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/>\n</svg>"}, {"name": "comm-mail", "category": "comm", "label": "mail", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/>\n  <polyline points=\"2 4 12 13 22 4\"/>\n</svg>"}, {"name": "commerce-cart", "category": "commerce", "label": "cart", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <circle cx=\"9\" cy=\"21\" r=\"1.5\"/>\n  <circle cx=\"20\" cy=\"21\" r=\"1.5\"/>\n  <path d=\"M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6\"/>\n</svg>"}, {"name": "device-mobile", "category": "device", "label": "mobile", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <rect x=\"5\" y=\"2\" width=\"14\" height=\"20\" rx=\"2\"/>\n  <circle cx=\"12\" cy=\"18\" r=\"1\"/>\n</svg>"}, {"name": "file-download", "category": "file", "label": "download", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/>\n  <polyline points=\"7 10 12 15 17 10\"/>\n  <line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/>\n</svg>"}, {"name": "media-camera", "category": "media", "label": "camera", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z\"/>\n  <circle cx=\"12\" cy=\"13\" r=\"4\"/>\n</svg>"}, {"name": "nav-arrow-left", "category": "nav", "label": "arrow left", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"20\" y1=\"12\" x2=\"4\" y2=\"12\"/>\n  <polyline points=\"10 18 4 12 10 6\"/>\n</svg>"}, {"name": "nav-arrow-right", "category": "nav", "label": "arrow right", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"4\" y1=\"12\" x2=\"20\" y2=\"12\"/>\n  <polyline points=\"14 6 20 12 14 18\"/>\n</svg>"}, {"name": "nav-close", "category": "nav", "label": "close", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"5\" y1=\"5\" x2=\"19\" y2=\"19\"/>\n  <line x1=\"19\" y1=\"5\" x2=\"5\" y2=\"19\"/>\n</svg>"}, {"name": "nav-menu", "category": "nav", "label": "menu", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <line x1=\"3\" y1=\"7\" x2=\"21\" y2=\"7\"/>\n  <line x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/>\n  <line x1=\"3\" y1=\"17\" x2=\"21\" y2=\"17\"/>\n</svg>"}, {"name": "science-flask", "category": "science", "label": "flask", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M 10,3 L 14,3 L 14,7 L 20,19 L 4,19 L 10,7 Z\"/>\n</svg>"}, {"name": "science-microscope", "category": "science", "label": "microscope", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <circle cx=\"12\" cy=\"5\" r=\"2\"/>\n  <line x1=\"12\" y1=\"7\" x2=\"12\" y2=\"13\"/>\n  <line x1=\"7\" y1=\"13\" x2=\"17\" y2=\"13\"/>\n  <line x1=\"12\" y1=\"13\" x2=\"12\" y2=\"17\"/>\n  <line x1=\"7\" y1=\"13\" x2=\"7\" y2=\"20\"/>\n  <line x1=\"4\" y1=\"20\" x2=\"20\" y2=\"20\"/>\n</svg>"}, {"name": "social-heart", "category": "social", "label": "heart", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/>\n</svg>"}, {"name": "social-star", "category": "social", "label": "star", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"/>\n</svg>"}, {"name": "social-user", "category": "social", "label": "user", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <circle cx=\"12\" cy=\"8\" r=\"4\"/>\n  <path d=\"M4 20c0-4 3.58-7 8-7s8 3 8 7\"/>\n</svg>"}, {"name": "status-check", "category": "status", "label": "check", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <polyline points=\"4 13 9 18 20 7\"/>\n</svg>"}, {"name": "status-warning", "category": "status", "label": "warning", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M10.29 3.86L2.82 17a2 2 0 0 0 1.71 3h15a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z\"/>\n  <line x1=\"12\" y1=\"9\" x2=\"12\" y2=\"13\"/>\n  <circle cx=\"12\" cy=\"17\" r=\"0.5\"/>\n</svg>"}, {"name": "ui-bell", "category": "ui", "label": "bell", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9\"/>\n  <path d=\"M13.73 21a2 2 0 0 1-3.46 0\"/>\n</svg>"}];
 const grid = document.getElementById('grid');
 const search = document.getElementById('search');
 const countEl = document.getElementById('icon-count');
 let activecat = 'all';
 let selected = null;
-
-document.getElementById('total-count').textContent = ICONS.length;
-document.getElementById('cat-count').textContent = [...new Set(ICONS.map(i => i.category))].length;
 
 function render() {
   const q = search.value.toLowerCase().trim();
@@ -248,10 +228,7 @@ function render() {
     return matchCat && matchQ;
   });
   countEl.textContent = filtered.length + ' icon' + (filtered.length !== 1 ? 's' : '');
-  if (!filtered.length) {
-    grid.innerHTML = '<div class="no-results">No icons found.</div>';
-    return;
-  }
+  if (!filtered.length) { grid.innerHTML = '<div class="no-results">No icons found.</div>'; return; }
   const sorted = [...filtered].reverse();
   grid.innerHTML = sorted.map((icon, i) => `
     <div class="icon-card" data-name="${icon.name}" data-new="${i < 3 ? 'true' : 'false'}">
@@ -271,7 +248,7 @@ function openDetail(name) {
   selected = icon;
   document.getElementById('detail-icon').innerHTML = icon.svg;
   document.getElementById('detail-name').textContent = icon.name;
-  document.getElementById('detail-cat').textContent = icon.category + ' · 24×24 · stroke · currentColor';
+  document.getElementById('detail-cat').textContent = icon.category + ' · 24x24 · stroke · currentColor';
   document.getElementById('detail').classList.add('open');
 }
 
