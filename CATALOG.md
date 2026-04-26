@@ -2,8 +2,8 @@
 
 Auto-maintained. Add new icons here when they are added to `/src`.
 
-**Total icons:** 21  
-**Last updated:** 2026-04-26
+**Total icons:** 23  
+**Last updated:** 2026-04-27
 
 ---
 
@@ -91,3 +91,10 @@ Auto-maintained. Add new icons here when they are added to `/src`.
 | File | Description | Status | Notes |
 |---|---|---|---|
 | `device-mobile.svg` | Mobile phone | `needs-review` | |
+
+## science
+
+| File | Description | Status | Notes |
+|---|---|---|---|
+| `science-microscope.svg` | Laboratory microscope with eyepiece and stage | `needs-review` | |
+| `science-flask.svg` | Conical Erlenmeyer flask | `needs-review` | |
