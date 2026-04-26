@@ -2,33 +2,19 @@
 
 ## Mandatory Post-Icon Workflow
 
-After saving any new `.svg` file to `src/`, always run all three steps below in order before considering the task done.
+After saving any new `.svg` file to `src/`, always run both steps below in order before considering the task done.
 
 ---
 
-### Step 1 — Rebuild `docs/index.html`
+### Step 1 — Run the build script
 
-Use Glob to list every `.svg` file currently in `src/`. Then Read each file individually. Then fully overwrite `docs/index.html` as a static icon gallery containing ALL of them — not just the ones added in the current session.
+```
+python build.py
+```
 
-Required process (do not skip any step):
-1. `Glob("src/*.svg")` — discover the full current file list
-2. `Read` each file returned by Glob — get the exact SVG source
-3. `Write` a brand-new `docs/index.html` that embeds every file found in step 1
+This script handles everything: reads all SVGs from `src/`, rebuilds `docs/index.html`, and updates the `CATALOG.md` total count. Do not write `docs/index.html` or update the count manually.
 
-Rules for the generated HTML:
-- One card per icon, laid out in a CSS grid
-- Each card inlines the raw SVG markup verbatim from the Read result (do not use `<img src>`, do not reconstruct from memory)
-- Each card shows the filename (without `.svg`) as a label beneath the icon
-- The subtitle shows the total icon count from step 1
-- Match the visual style of `review.html` (same grid, card, and typography classes) but without flag buttons or review log — docs/index.html is a clean read-only gallery
-- Always overwrite the full file from scratch — never append or partially update
-- Always write to `docs/index.html` — never to the project root
-
-### Step 2 — Update `CATALOG.md` total count
-
-Count the `.svg` files in `src/` and update the `**Total icons:**` line in `CATALOG.md` to match.
-
-### Step 3 — Commit and push
+### Step 2 — Commit and push
 
 Run exactly:
 
