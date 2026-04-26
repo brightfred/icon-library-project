@@ -2,7 +2,7 @@
 
 Auto-maintained. Add new icons here when they are added to `/src`.
 
-**Total icons:** 23  
+**Total icons:** 25  
 **Last updated:** 2026-04-27
 
 ---
@@ -96,5 +96,7 @@ Auto-maintained. Add new icons here when they are added to `/src`.
 
 | File | Description | Status | Notes |
 |---|---|---|---|
+| `science-atom.svg` | Atom with nucleus and two elliptical orbits | `needs-review` | |
+| `science-dna.svg` | DNA double helix with connecting rungs | `needs-review` | |
 | `science-microscope.svg` | Laboratory microscope with eyepiece and stage | `needs-review` | |
 | `science-flask.svg` | Conical Erlenmeyer flask | `needs-review` | |
