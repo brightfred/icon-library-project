@@ -42,6 +42,39 @@ Set stroke-width on the root `<svg>` element only — never on individual paths.
 Search the web for a real reference before drawing any icon.
 Do not draw from memory. Use what you find to identify the minimum strokes needed to communicate the concept.
 
+## Drawing Approach
+
+Before writing any SVG, work through these steps mentally:
+
+1. **Identify 3-6 anatomical parts** of the object. Microscope: eyepiece, body tube, stage, arm, base. Fish: body, tail, fin, eye.
+2. **Map one path to each part.** Every path must have a named purpose. If you cannot name what anatomical part a path represents, remove it.
+3. **Trace real silhouettes with curves.** Use `path` with bezier curves to follow the actual contour of the object. Reserve `line` only for genuinely straight isolated strokes — baselines, crosshairs, tick marks.
+4. **Test at 16px mentally.** Would someone immediately know what this is without a label? If no — redraw.
+
+**Bad — microscope as disconnected lines:**
+These lines could be anything. They do not read as a microscope.
+```
+<circle cx="12" cy="5" r="2"/>
+<line x1="12" y1="7" x2="12" y2="13"/>
+<line x1="7" y1="13" x2="17" y2="13"/>
+```
+
+**Good — microscope as traced shapes:**
+Each path traces a real anatomical part. The C-arm curve makes it instantly recognisable.
+```
+<path d="M 9,6 L 9,3 L 13,3 L 13,6"/>       <!-- eyepiece U-shape -->
+<path d="M 8,12 L 8,6 L 13,6 L 13,12"/>      <!-- body tube -->
+<line x1="5" y1="15" x2="13" y2="15"/>       <!-- stage platform -->
+<path d="M 13,6 C 21,6 21,22 15,22"/>        <!-- C-arm bezier -->
+<line x1="3" y1="22" x2="21" y2="22"/>       <!-- base -->
+```
+
+**Using an existing icon as reference (e.g. Lucide — MIT licensed):**
+- Study how it maps paths to anatomical parts
+- Differentiate deliberately: change proportions, curve direction, body width, detail level
+- Every path in your version must differ meaningfully from the reference
+- Document what anatomical part each path represents before committing
+
 ## What Makes a Good Icon
 
 - Recognisable at 16px and 48px
@@ -58,6 +91,7 @@ Do not draw from memory. Use what you find to identify the minimum strokes neede
 - Details that disappear at small sizes
 - Filled paths used as a shortcut for a shape
 - Drawing without checking a reference first
+- Collections of disconnected lines that only vaguely suggest the object
 
 ## File Format
 
@@ -86,6 +120,8 @@ Categories: action, nav, ui, media, file, comm, social, status, device, commerce
 ## Quality Checklist
 
 - [ ] Web reference checked before drawing
+- [ ] Every path maps to a named anatomical part
+- [ ] No disconnected lines that only vaguely suggest the object
 - [ ] ViewBox is exactly `0 0 24 24`
 - [ ] No hardcoded colors — only `currentColor`
 - [ ] No filled paths
