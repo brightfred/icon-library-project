@@ -2,7 +2,7 @@
 
 Auto-maintained. Add new icons here when they are added to `/src`.
 
-**Total icons:** 25  
+**Total icons:** 45  
 **Last updated:** 2026-04-27
 
 ---
@@ -100,3 +100,38 @@ Auto-maintained. Add new icons here when they are added to `/src`.
 | `science-dna.svg` | DNA double helix with connecting rungs | `needs-review` | |
 | `science-microscope.svg` | Laboratory microscope with eyepiece and stage | `needs-review` | |
 | `science-flask.svg` | Conical Erlenmeyer flask | `needs-review` | |
+| `science-pipette.svg` | Laboratory pipette with plunger and tapered tip | `needs-review` | |
+| `science-centrifuge.svg` | Centrifuge tube at angle with motion lines | `needs-review` | |
+| `science-beaker.svg` | Cylindrical beaker with spout and volume line | `needs-review` | |
+| `science-cell.svg` | Biological cell with nucleus and membrane | `needs-review` | |
+| `science-magnet.svg` | Horseshoe magnet with pole markers | `needs-review` | |
+
+## aquaculture
+
+| File | Description | Status | Notes |
+|---|---|---|---|
+| `aquaculture-fish.svg` | Simple fish with tail, fin, and eye facing right | `needs-review` | |
+| `aquaculture-shrimp.svg` | Shrimp with curved body, antennae, and tail | `needs-review` | |
+| `aquaculture-net.svg` | Fishing net with gathered top edge and grid | `needs-review` | |
+| `aquaculture-tank.svg` | Fish tank with waterline and fish inside | `needs-review` | |
+| `aquaculture-oxygen.svg` | Water droplet with two dissolved oxygen bubbles | `needs-review` | |
+
+## environment
+
+| File | Description | Status | Notes |
+|---|---|---|---|
+| `environment-leaf.svg` | Single leaf with center and side veins | `needs-review` | |
+| `environment-wave.svg` | Two overlapping ocean waves | `needs-review` | |
+| `environment-solar.svg` | Sun with 8 radiating lines | `needs-review` | |
+| `environment-wind.svg` | Three curved wind lines decreasing in length | `needs-review` | |
+| `environment-co2.svg` | Cloud shape with upward emission arrow | `needs-review` | |
+
+## engineering
+
+| File | Description | Status | Notes |
+|---|---|---|---|
+| `engineering-gear.svg` | Single gear with 8 teeth and center hole | `needs-review` | |
+| `engineering-circuit.svg` | Circuit board traces with nodes at corners | `needs-review` | |
+| `engineering-valve.svg` | Pipe valve with wheel handle | `needs-review` | |
+| `engineering-pressure.svg` | Pressure gauge with semicircle scale and needle | `needs-review` | |
+| `engineering-blueprint.svg` | Document with floor plan grid lines | `needs-review` | |
