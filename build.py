@@ -365,6 +365,108 @@ render();
 OUTPUT.write_text(html, encoding="utf-8")
 print(f"Built docs/index.html with {len(icons)} icons.")
 
+# ── Build review.html ─────────────────────────────────────────────────────────
+cards = ""
+for icon in icons:
+    n = icon["name"]
+    cards += f"""
+    <div class="card" id="{n}">
+      <div class="icon-wrap">{icon["svg"]}</div>
+      <div class="label">{n}</div>
+      <div class="actions">
+        <button onclick="flag('{n}','good')" class="btn good">Good</button>
+        <button onclick="flag('{n}','too-generic')" class="btn bad">Generic</button>
+        <button onclick="flag('{n}','too-complex')" class="btn bad">Complex</button>
+        <button onclick="flag('{n}','unclear')" class="btn bad">Unclear</button>
+        <button onclick="flag('{n}','wrong-style')" class="btn bad">Style</button>
+      </div>
+      <div class="status" id="status-{n}">needs-review</div>
+    </div>"""
+
+review_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Icon Review — {len(icons)} icons</title>
+<style>
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{ font-family: Arial, sans-serif; background: #f3f4f6; padding: 24px; }}
+  h1 {{ font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 4px; }}
+  .subtitle {{ font-size: 13px; color: #6b7280; margin-bottom: 24px; }}
+  .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }}
+  .card {{ background: white; border-radius: 10px; padding: 20px 12px 14px; text-align: center; border: 2px solid #e5e7eb; transition: border-color 0.2s; }}
+  .card.flagged-good {{ border-color: #22c55e; background: #f0fdf4; }}
+  .card.flagged-bad {{ border-color: #ef4444; background: #fef2f2; }}
+  .icon-wrap {{ display: flex; align-items: center; justify-content: center; height: 48px; margin-bottom: 10px; }}
+  .icon-wrap svg {{ width: 32px; height: 32px; color: #1a56db; }}
+  .label {{ font-size: 11px; color: #374151; margin-bottom: 10px; word-break: break-all; line-height: 1.4; }}
+  .actions {{ display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; margin-bottom: 8px; }}
+  .btn {{ font-size: 10px; padding: 3px 7px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; }}
+  .btn.good {{ background: #dcfce7; color: #166534; }}
+  .btn.bad {{ background: #fee2e2; color: #991b1b; }}
+  .btn:hover {{ opacity: 0.8; }}
+  .status {{ font-size: 10px; color: #9ca3af; font-style: italic; }}
+  .summary {{ margin-top: 28px; background: white; border-radius: 10px; padding: 16px 20px; border: 1px solid #e5e7eb; }}
+  .summary h2 {{ font-size: 14px; font-weight: 700; margin-bottom: 10px; color: #111827; }}
+  #log {{ font-size: 12px; color: #374151; line-height: 2; }}
+  .copy-btn {{ margin-top: 10px; font-size: 12px; padding: 6px 14px; background: #1a56db; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }}
+  .copy-btn:hover {{ background: #1e40af; }}
+  .filter-bar {{ display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }}
+  .filter-btn {{ font-size: 11px; padding: 4px 12px; border: 1px solid #d1d5db; border-radius: 4px; background: white; cursor: pointer; }}
+  .filter-btn.active {{ background: #1a56db; color: white; border-color: #1a56db; }}
+</style>
+</head>
+<body>
+<h1>Icon Review</h1>
+<p class="subtitle">{len(icons)} icons — flag then copy the log for Claude Code</p>
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCat('all')">All</button>
+  {"".join(f'<button class="filter-btn" onclick="filterCat(\'{c}\')">{c}</button>' for c in categories)}
+</div>
+<div class="grid" id="grid">{cards}</div>
+<div class="summary">
+  <h2>Review Log</h2>
+  <div id="log">No flags yet.</div>
+  <button class="copy-btn" onclick="copyLog()">Copy log for Claude Code</button>
+</div>
+<script>
+  const flags = {{}};
+  function flag(name, status) {{
+    flags[name] = status;
+    const card = document.getElementById(name);
+    card.className = 'card ' + (status === 'good' ? 'flagged-good' : 'flagged-bad');
+    document.getElementById('status-' + name).textContent = status;
+    renderLog();
+  }}
+  function renderLog() {{
+    const entries = Object.entries(flags);
+    if (!entries.length) {{ document.getElementById('log').textContent = 'No flags yet.'; return; }}
+    document.getElementById('log').innerHTML = entries
+      .map(([name, status]) => `<span style="color:${{status==='good'?'#166534':'#991b1b'}}">${{name}}: ${{status}}</span>`)
+      .join('<br>');
+  }}
+  function copyLog() {{
+    const entries = Object.entries(flags);
+    if (!entries.length) {{ alert('No flags yet.'); return; }}
+    const text = entries.map(([name, status]) => `${{name}}: ${{status}}`).join('\\n');
+    navigator.clipboard.writeText(text).then(() => alert('Copied!'));
+  }}
+  function filterCat(cat) {{
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.card').forEach(card => {{
+      card.style.display = cat === 'all' || card.id.startsWith(cat) ? '' : 'none';
+    }});
+  }}
+</script>
+</body>
+</html>"""
+
+review_path = ROOT / "review.html"
+review_path.write_text(review_html, encoding="utf-8")
+print(f"Built review.html with {len(icons)} icons.")
+
 # ── Update CATALOG.md total count ─────────────────────────────────────────────
 if CATALOG.exists():
     content = CATALOG.read_text(encoding="utf-8")
