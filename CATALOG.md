@@ -2,8 +2,8 @@
 
 Auto-maintained. Add new icons here when they are added to `/src`.
 
-**Total icons:** 45  
-**Last updated:** 2026-04-27
+**Total icons:** 46  
+**Last updated:** 2026-04-28
 
 ---
 
@@ -105,6 +105,7 @@ Auto-maintained. Add new icons here when they are added to `/src`.
 | `science-beaker.svg` | Cylindrical beaker with spout and volume line | `needs-review` | |
 | `science-cell.svg` | Biological cell with nucleus and membrane | `needs-review` | |
 | `science-magnet.svg` | Horseshoe magnet with pole markers | `needs-review` | |
+| `science-laser.svg` | coherent laser beam emitter with lens | `needs-review` | |
 
 ## aquaculture
 
