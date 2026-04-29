@@ -10,6 +10,7 @@ Usage:
   python generate.py --dry-run              # print queue and exit
   python generate.py --backend omnisvg      # use OmniSVG instead of Ollama
   python generate.py --backend ollama       # explicitly use Ollama (default)
+  python generate.py --backend finetuned    # use fine-tuned local model
 """
 
 import argparse
@@ -24,7 +25,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--backend",
         default="ollama",
-        choices=["ollama", "omnisvg"],
+        choices=["ollama", "omnisvg", "finetuned"],
         help="Generation backend to use (default: ollama)",
     )
     parser.add_argument(

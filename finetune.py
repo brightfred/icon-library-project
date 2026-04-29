@@ -32,8 +32,8 @@ VALID_JSONL  = TRAINING_DIR / "validation.jsonl"
 OUTPUT_DIR   = ROOT / "model_output"
 OLLAMA_DIR   = ROOT / "ollama_model"
 
-# Model — 1.5B fits easily in 12.8GB VRAM with QLoRA
-BASE_MODEL   = "Qwen/Qwen2.5-Coder-1.5B-Instruct"
+
+BASE_MODEL = "Qwen/Qwen2.5-Coder-7B-Instruct"
 
 # Training hyperparameters
 MAX_SEQ_LEN  = 2048   # max SVG length in tokens
@@ -190,7 +190,7 @@ def train(test_mode: bool = False, resume: bool = False):
             gradient_accumulation_steps = GRAD_ACCUM,
             warmup_steps             = WARMUP_STEPS,
             num_train_epochs         = 1 if test_mode else NUM_EPOCHS,
-            max_steps                = steps,
+            max_steps                = 10 if test_mode else -1,
             learning_rate            = LEARNING_RATE,
             fp16                     = not is_bfloat16_supported(),
             bf16                     = is_bfloat16_supported(),
