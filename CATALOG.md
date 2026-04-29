@@ -2,8 +2,8 @@
 
 Auto-maintained. Add new icons here when they are added to `/src`.
 
-**Total icons:** 46  
-**Last updated:** 2026-04-28
+**Total icons:** 47  
+**Last updated:** 2026-04-29
 
 ---
 
@@ -116,6 +116,7 @@ Auto-maintained. Add new icons here when they are added to `/src`.
 | `aquaculture-net.svg` | Fishing net with gathered top edge and grid | `needs-review` | |
 | `aquaculture-tank.svg` | Fish tank with waterline and fish inside | `needs-review` | |
 | `aquaculture-oxygen.svg` | Water droplet with two dissolved oxygen bubbles | `needs-review` | |
+| `aquaculture-shark.svg` | shark with dorsal fin and tail | `needs-review` | |
 
 ## environment
 
