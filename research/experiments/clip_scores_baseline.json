@@ -1,0 +1,82 @@
+[
+  {
+    "icon": "action-add.svg",
+    "concept": "add",
+    "clip_score": 0.25042271614074707,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.2309146359562874,
+    "best_template": "a simple add symbol"
+  },
+  {
+    "icon": "action-delete.svg",
+    "concept": "delete",
+    "clip_score": 0.26192086935043335,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.24241278916597367,
+    "best_template": "a simple delete symbol"
+  },
+  {
+    "icon": "action-edit.svg",
+    "concept": "edit",
+    "clip_score": 0.25573450326919556,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.23622642308473588,
+    "best_template": "a simple edit symbol"
+  },
+  {
+    "icon": "action-search.svg",
+    "concept": "search",
+    "clip_score": 0.26019343733787537,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.24068535715341569,
+    "best_template": "a simple search symbol"
+  },
+  {
+    "icon": "action-upload.svg",
+    "concept": "upload",
+    "clip_score": 0.25363120436668396,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.23412312418222428,
+    "best_template": "a simple upload symbol"
+  },
+  {
+    "icon": "aquaculture-fish.svg",
+    "concept": "fish",
+    "clip_score": 0.23334771394729614,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.21383963376283646,
+    "best_template": "a simple fish symbol"
+  },
+  {
+    "icon": "aquaculture-net.svg",
+    "concept": "net",
+    "clip_score": 0.25184565782546997,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.2323375776410103,
+    "best_template": "a simple net symbol"
+  },
+  {
+    "icon": "aquaculture-oxygen.svg",
+    "concept": "oxygen",
+    "clip_score": 0.2509722411632538,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.2314641609787941,
+    "best_template": "a simple oxygen symbol"
+  },
+  {
+    "icon": "aquaculture-shrimp.svg",
+    "concept": "shrimp",
+    "clip_score": 0.23200608789920807,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.2124980077147484,
+    "best_template": "a simple shrimp symbol"
+  },
+  {
+    "icon": "aquaculture-tank.svg",
+    "concept": "tank",
+    "clip_score": 0.234868124127388,
+    "negative_score": 0.23901616036891937,
+    "final_score": 0.21536004394292832,
+    "best_template": "a simple tank symbol"
+  }
+]
