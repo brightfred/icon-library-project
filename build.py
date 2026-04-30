@@ -11,7 +11,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-SRC = ROOT / "src"
+SRC = ROOT / "icons"
 DOCS = ROOT / "docs"
 CATALOG = ROOT / "CATALOG.md"
 OUTPUT = DOCS / "index.html"

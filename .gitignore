@@ -30,5 +30,5 @@ review.html
 .claude/
 training_data/
 training_data/
-model_output/
-ollama_model/
+models/model_output/
+models/ollama_model/

@@ -4,7 +4,7 @@ from pathlib import Path
 from pipeline.backends.base import AbstractBackend, GenerationRequest, GenerationResult
 from pipeline.config import ROOT
 
-ADAPTERS_PATH = ROOT / "model_output" / "lora_adapters"
+ADAPTERS_PATH = ROOT / "models" / "model_output" / "lora_adapters"
 MAX_NEW_TOKENS = 512
 
 

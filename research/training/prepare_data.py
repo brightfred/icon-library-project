@@ -5,18 +5,18 @@ Downloads SVG icons from MIT-licensed open source libraries and formats
 them as prompt/completion pairs for LLM fine-tuning.
 
 Usage:
-  python prepare_training_data.py              # download all libraries
-  python prepare_training_data.py --lucide     # lucide only
-  python prepare_training_data.py --tabler     # tabler only
-  python prepare_training_data.py --phosphor   # phosphor only
-  python prepare_training_data.py --heroicons  # heroicons only
-  python prepare_training_data.py --local      # include your own src/ icons
-  python prepare_training_data.py --stats      # show dataset stats only
+  python research/training/prepare_data.py              # download all
+  python research/training/prepare_data.py --lucide
+  python research/training/prepare_data.py --tabler
+  python research/training/prepare_data.py --phosphor
+  python research/training/prepare_data.py --heroicons
+  python research/training/prepare_data.py --local
+  python research/training/prepare_data.py --stats
 
 Output:
-  training_data/
-    raw/             # downloaded SVG files
-    training.jsonl   # prompt/completion pairs for fine-tuning
+  data/training_data/
+    raw/             downloaded SVG files
+    training.jsonl   prompt/completion pairs
     validation.jsonl
     stats.json
 """
@@ -24,7 +24,6 @@ Output:
 import json
 import re
 import sys
-import time
 import random
 import argparse
 import urllib.request
@@ -34,12 +33,12 @@ import io
 from pathlib import Path
 from datetime import datetime
 
+# Add project root to path
+ROOT = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(ROOT))
 
-# ── Config ────────────────────────────────────────────────────────────────────
+from pipeline.config import TRAINING_DIR, SRC
 
-ROOT         = Path(__file__).parent
-SRC          = ROOT / "src"
-TRAINING_DIR = ROOT / "training_data"
 RAW_DIR      = TRAINING_DIR / "raw"
 OUTPUT_JSONL = TRAINING_DIR / "training.jsonl"
 VALID_JSONL  = TRAINING_DIR / "validation.jsonl"
@@ -51,7 +50,6 @@ RANDOM_SEED      = 42
 # ── Library definitions ───────────────────────────────────────────────────────
 
 LIBRARIES = {
-    # Stroke-only libraries — match our style guide exactly
     "lucide": {
         "url":    "https://github.com/lucide-icons/lucide/archive/refs/heads/main.zip",
         "subdir": "lucide-main/icons",
@@ -67,7 +65,6 @@ LIBRARIES = {
         "subdir": "heroicons-master/src/24/outline",
         "style":  "stroke",
     },
-    # Filled libraries — different style, labeled accordingly
     "phosphor": {
         "url":    "https://github.com/phosphor-icons/core/archive/refs/heads/main.zip",
         "subdir": "core-main/assets/regular",
@@ -75,7 +72,6 @@ LIBRARIES = {
     },
 }
 
-# Prompt templates for stroke-only icons
 STROKE_PROMPTS = [
     "SVG icon of {concept}, stroke-only, 24x24 viewBox, currentColor",
     "Create a minimal SVG icon for {concept}. Stroke-based, viewBox 0 0 24 24.",
@@ -89,7 +85,6 @@ STROKE_PROMPTS = [
     "SVG stroke icon of {concept}. Clean paths, currentColor, 24px grid.",
 ]
 
-# Prompt templates for filled icons
 FILL_PROMPTS = [
     "SVG icon of {concept}, filled style, currentColor",
     "Create a filled SVG icon for {concept}. Fill-based, currentColor.",
@@ -105,8 +100,6 @@ FILL_PROMPTS = [
 # ── SVG Validators ────────────────────────────────────────────────────────────
 
 class StrokeSVGValidator:
-    """Validates stroke-only SVG icons."""
-
     MAX_SIZE = 8000
     MIN_SIZE = 100
 
@@ -127,7 +120,7 @@ class StrokeSVGValidator:
             r'(?:fill|stroke|color)="(?!none|currentColor)[^"]*"', svg
         )
         if hardcoded:
-            return False, f"hardcoded color"
+            return False, "hardcoded color"
         return True, "ok"
 
     def clean(self, svg: str) -> str:
@@ -138,8 +131,6 @@ class StrokeSVGValidator:
 
 
 class FilledSVGValidator:
-    """Validates filled SVG icons (Phosphor style)."""
-
     MAX_SIZE = 8000
     MIN_SIZE = 100
 
@@ -152,7 +143,6 @@ class FilledSVGValidator:
             return False, "no svg tag"
         if "currentColor" not in svg:
             return False, "no currentColor"
-        # Must have fill (not stroke-only)
         if 'fill="none"' in svg and 'stroke="currentColor"' not in svg:
             return False, "no fill"
         return True, "ok"
@@ -259,8 +249,8 @@ class LibraryDownloader:
             return []
 
         print(f"  {name}: extracting SVGs...")
-        svgs    = []
-        subdir  = config["subdir"]
+        svgs   = []
+        subdir = config["subdir"]
 
         try:
             with zipfile.ZipFile(io.BytesIO(data)) as zf:
@@ -303,7 +293,6 @@ def process_library(name: str, svg_files: list[Path],
         svg     = validator.clean(raw)
         concept = filename_to_concept(svg_path.name)
         cat     = concept_to_category(concept)
-
         examples.append(build_example(svg, concept, name, cat, style))
 
     print(f"  {name}: {len(examples)} valid, {skipped} skipped")
@@ -311,7 +300,6 @@ def process_library(name: str, svg_files: list[Path],
 
 
 def process_local_src() -> list[dict]:
-    """Include your own icons with 3x weight."""
     if not SRC.exists():
         return []
 
@@ -356,9 +344,9 @@ def write_stats(examples: list[dict], path: Path) -> dict:
     lengths    = []
 
     for ex in examples:
-        src  = ex["metadata"]["source"]
-        cat  = ex["metadata"]["category"]
-        sty  = ex["metadata"]["style"]
+        src = ex["metadata"]["source"]
+        cat = ex["metadata"]["category"]
+        sty = ex["metadata"]["style"]
         sources[src]    = sources.get(src, 0) + 1
         categories[cat] = categories.get(cat, 0) + 1
         styles[sty]     = styles.get(sty, 0) + 1
@@ -454,7 +442,6 @@ def main():
         print("No examples generated.")
         sys.exit(1)
 
-    # Shuffle and split
     random.shuffle(all_examples)
     split     = int(len(all_examples) * (1 - VALIDATION_SPLIT))
     train_set = all_examples[:split]
@@ -467,13 +454,12 @@ def main():
 
     print(f"  training.jsonl:   {len(train_set)} examples")
     print(f"  validation.jsonl: {len(valid_set)} examples")
-
     print_stats(stats)
 
     print("Next steps:")
-    print("  1. Review training_data/training.jsonl")
-    print("  2. pip install unsloth")
-    print("  3. python finetune.py")
+    print("  1. Review data/training_data/training.jsonl")
+    print("  2. python research/training/finetune.py --test")
+    print("  3. python research/training/finetune.py")
 
 
 if __name__ == "__main__":

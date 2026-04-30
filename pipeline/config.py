@@ -4,15 +4,24 @@ from pathlib import Path
 # ── Paths ─────────────────────────────────────────────────────────────────────
 
 ROOT        = Path(__file__).parent.parent
-SRC         = ROOT / "src"
+SRC         = ROOT / "icons"
 DOCS        = ROOT / "docs"
-QUEUE_FILE  = ROOT / "queue.json"
-REJECTED    = ROOT / "rejected.json"
+DATA        = ROOT / "data"
 STYLE_GUIDE = ROOT / "style-guide.md"
 CATALOG     = ROOT / "CATALOG.md"
 LOG_FILE    = ROOT / "generate.log"
 REVIEW_TMPL = ROOT / "review_template.html"
 REVIEW_OUT  = ROOT / "review.html"
+
+# ── Data files ────────────────────────────────────────────────────────────────
+
+QUEUE_FILE    = DATA / "queue.json"
+REJECTED      = DATA / "rejected.json"
+REVIEWED      = DATA / "reviewed.json"
+TRAINING_DIR  = DATA / "training_data"
+
+# ── OmniSVG paths ─────────────────────────────────────────────────────────────
+
 OMNISVG_DIR = ROOT / "OmniSVG"
 MODEL_8B    = ROOT / "OmniSVG1.1_8B"
 MODEL_4B    = ROOT / "OmniSVG1.1_4B"
@@ -22,6 +31,17 @@ OMNISVG_TMP = ROOT / "_omnisvg_output"
 QWEN_MODEL_3B = ROOT / "Qwen2.5-VL-3B-Instruct"
 QWEN_MODEL_7B = ROOT / "Qwen2.5-VL-7B-Instruct"
 QWEN_MODEL    = QWEN_MODEL_7B  # legacy alias
+
+# ── Research paths ────────────────────────────────────────────────────────────
+
+RESEARCH_DIR    = ROOT / "research"
+REWARD_DIR      = RESEARCH_DIR / "reward"
+TRAINING_CODE   = RESEARCH_DIR / "training"
+EVAL_DIR        = RESEARCH_DIR / "evaluation"
+BENCHMARK_DIR   = EVAL_DIR / "benchmark_icons"
+EXPERIMENTS_DIR = RESEARCH_DIR / "experiments"
+MODEL_OUTPUT    = ROOT / "models" / "model_output"
+OLLAMA_DIR      = ROOT / "models" / "ollama_model"
 
 # ── Generation ────────────────────────────────────────────────────────────────
 
@@ -48,10 +68,7 @@ OMNISVG_PROMPT_TEMPLATE = (
 
 # ── Style guide rules ─────────────────────────────────────────────────────────
 
-# Categories that use stroke-width 1.5 (complex/detailed)
 COMPLEX_CATEGORIES = {"science", "aquaculture", "engineering", "environment"}
-
-# Categories that use stroke-width 2 (simple/UI)
 SIMPLE_CATEGORIES  = {"action", "nav", "ui", "status", "social",
                       "comm", "file", "device", "commerce", "media"}
 
