@@ -2,7 +2,7 @@
 
 Auto-maintained. Add new icons here when they are added to `/src`.
 
-**Total icons:** 47  
+**Total icons:** 46  
 **Last updated:** 2026-04-30
 
 ---
